@@ -6,8 +6,8 @@
 #### Step 1: clone the repository
 
 ```bash
-git clone git@github.com:brainiactech/Pangea.git Pangea
-cd Pangea
+git clone git@github.com:brainiactech/Pangea-api.git Pangea-api
+cd Pangea-api
 ```
 
 #### Step 2: install General NPM packages
@@ -18,19 +18,19 @@ npm i
 
 #### Step 3: install NPM packages on each microservice
 
-1. cd into /Pangea/publisher and run npm install
-2. cd into /Pangea/subscribers and run npm install
+1. cd into /Pangea-api/publisher and run npm install
+2. cd into /Pangea-api/subscribers and run npm install
 
 
 #### Step 4: define the database connection
 
 Define Database for each service
-  1. cd into /Pangea/publisher/config and set the db field accordingly
+  1. cd into /Pangea-api/publisher/config and set the db field accordingly
 
 
 #### Step 5: start the server
 
-This will start both service at the same time, ensure you run this on the /Pangea path and not inside the microservices path
+This will start both service at the same time, ensure you run this on the /Pangea-api path and not inside the microservices path
 
 ```bash
 npm start

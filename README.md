@@ -24,7 +24,7 @@ npm i
 
 #### Step 4: define the database connection
 
-Define Database for each service
+Define Database for service
   1. cd into /Pangea-api/publisher/config and set the db field accordingly
 
 

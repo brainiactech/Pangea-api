@@ -9,17 +9,17 @@ apiEndpoints:
     paths: '/ip'
   user:
     host: localhost
-    paths: ['/users','/users/*']
+    paths: ['/publisher','/publisher/*']
   todo:
     host: localhost
-    paths: ['/todo','/todo/*']
+    paths: ['/subscribers','/subscribers/*']
 serviceEndpoints:
   httpbin:
     url: 'https://httpbin.org'
-  userService:
-    url: 'http://localhost:5000'
-  todoService:
-    url: 'http://localhost:3000'
+  publisherService:
+    url: 'http://localhost:8000'
+  subscribersService:
+    url: 'http://localhost:9000'
 policies:
   - basic-auth
   - cors
@@ -42,22 +42,22 @@ pipelines:
               changeOrigin: true
   userPipeline:
     apiEndpoints:
-      - user
+      - publisher
     policies:
     # Uncomment `key-auth:` when instructed to in the Getting Started guide.
     # - key-auth:
       - proxy:
           - action:
-              serviceEndpoint: userService
+              serviceEndpoint: publisherService
               changeOrigin: true
   todoPipeline:
     apiEndpoints:
-      - todo
+      - subscribers
     policies:
     # Uncomment `key-auth:` when instructed to in the Getting Started guide.
     # - key-auth:
       - proxy:
           - action:
-              serviceEndpoint: todoService
+              serviceEndpoint: subscribersService
               changeOrigin: true
 
